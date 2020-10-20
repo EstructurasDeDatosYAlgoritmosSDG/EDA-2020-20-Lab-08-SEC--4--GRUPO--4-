@@ -86,16 +86,23 @@ while True:
 
     elif int(inputs[0]) == 3:
         print("\nBuscando accidentes en una fecha en específico: ")
+
+    elif int(inputs[0]) == 4:
+
+        print("\nBuscando accidentes en una fecha en específico: ")
         date = input("Fecha (YYYY-MM-DD): ")
         lista = controller.getAccidentsByDate(cont, date)
         print("\nTotal de accidentes en la fecha: " + str(lt.size(lista)))
 
-
-    elif int(inputs[0]) == 4:
-        print("\nRequerimiento No 1 del reto 3: ")
-
     elif int(inputs[0]) == 5:
-        print("\nRequerimiento No 1 del reto 3: ")
+        print("\nBuscando accidentes en un rango de fecha específico:")
+        initialDate = input("\nPor favor digite la fecha inicial del rango:")
+        finalDate = input("\nPor favor digite la fecha final del rango:")
+        total = controller.getAccidentesByRange(cont, initialDate,finalDate)
+        mayor = controller.MostSeverity(cont,initialDate,finalDate)
+
+        print("\n El total de accidentes en el rango es de: " + str(lt.size(total))+", y la severidad con mayor recurrencia fue de: " + mayor)
+
 
     elif int(inputs[0]) == 6:
         print("\nRequerimiento No 1 del reto 3: ")

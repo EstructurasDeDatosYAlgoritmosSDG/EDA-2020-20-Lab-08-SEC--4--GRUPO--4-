@@ -104,3 +104,16 @@ def getAccidentsByDate(analyzer, date):
     """
     date = datetime.datetime.strptime(date, '%Y-%m-%d')
     return model.getAccidentsByDate(analyzer, date.date())
+
+def getAccidentesByRange(analyzer, initialDate, finalDate):
+
+    initialDate = datetime.datetime.strptime(initialDate,'%Y-%m-%d')
+    finalDate = datetime.datetime.strptime(finalDate,'%Y-%m-%d')
+    return model.getAccidentsByRange(analyzer, initialDate, finalDate)
+
+def MostSeverity(analyzer, initialDate, finalDate):
+
+    initialDate = datetime.datetime.strptime(initialDate,'%Y-%m-%d')
+    finalDate = datetime.datetime.strptime(finalDate,'%Y-%m-%d')
+    return model.getMostSeverity(analyzer, initialDate, finalDate)
+
